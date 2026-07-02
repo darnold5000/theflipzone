@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { EnrollButton, InternalLink } from "@/components/ui-primitives";
 import { iclassproLinks } from "@/data/iclassproLinks";
+import { brand } from "@/data/brand";
 
 interface HeroProps {
   headline?: string;
@@ -16,7 +17,7 @@ interface HeroProps {
 export function Hero({
   headline = "Building Confident Kids Through Gymnastics",
   subheadline = "From first cartwheels to competitive team, Flip Zone helps athletes build strength, confidence, discipline, and joy.",
-  image = "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&q=80",
+  image = brand.homepageHero,
   showCTAs = true,
   compact = false,
 }: HeroProps) {

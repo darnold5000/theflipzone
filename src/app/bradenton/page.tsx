@@ -8,6 +8,7 @@ import { getLocation } from "@/data/locations";
 import { getProgramsForLocation } from "@/data/programs";
 import { getGalleryForLocation } from "@/data/gallery";
 import { iclassproLinks } from "@/data/iclassproLinks";
+import { brand } from "@/data/brand";
 
 const location = getLocation("bradenton");
 
@@ -26,7 +27,7 @@ export default function BradentonPage() {
       <Hero
         headline="Flip Zone Gymnastics of SWFL"
         subheadline="Preschool, recreational, and competitive women's gymnastics, plus camps and birthday parties in Bradenton, Florida."
-        image="https://images.unsplash.com/photo-1541534741688-607badd6c5c0?w=1600&q=80"
+        image={brand.floridaHero}
         showCTAs={false}
       />
 

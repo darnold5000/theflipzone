@@ -1,4 +1,5 @@
 import type { LocationId } from "./locations";
+import { wixImage } from "@/lib/wix-image";
 
 export interface GalleryImage {
   src: string;
@@ -9,40 +10,52 @@ export interface GalleryImage {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
-    alt: "Young gymnast on balance beam",
+    src: wixImage("3c407f_13a9a9f4073540be9a657fbc9a0bb6f0~mv2.png", 1200, 800, "fill"),
+    alt: "The Flip Zone Indiana facility",
     location: "plainfield",
-    caption: "Preschool gymnastics at Flip Zone Indiana",
+    caption: "Our two-building complex in Plainfield, Indiana",
   },
   {
-    src: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80",
-    alt: "Gymnastics training facility",
+    src: wixImage("3c407f_76362b8ee1a44252a7d590af253908e6~mv2.jpg", 800, 600, "fill"),
+    alt: "Gymnasts training at The Flip Zone Indiana",
     location: "plainfield",
-    caption: "Our 20,000+ sq ft Indiana facility",
+    caption: "Recreational gymnastics training",
   },
   {
-    src: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&q=80",
-    alt: "Gymnast performing on bars",
+    src: wixImage("3c407f_05c63b07987d4f91a32940c76767c6ad~mv2.jpg", 800, 600, "fill"),
+    alt: "Gymnastics classes at The Flip Zone",
     location: "plainfield",
-    caption: "Competitive team training",
+    caption: "Classes for all ages and levels",
   },
   {
-    src: "https://images.unsplash.com/photo-1541534741688-607badd6c5c0?w=800&q=80",
-    alt: "Kids gymnastics class",
+    src: wixImage("3c407f_20c4205ef7d447b9b93eca2fbf73055d~mv2.jpg", 800, 600, "fill"),
+    alt: "Preschool gymnastics at The Flip Zone",
+    location: "plainfield",
+    caption: "Preschool and early movement programs",
+  },
+  {
+    src: wixImage("3c407f_51a78953e34140e79d64393e5b857ebb~mv2.jpeg", 1200, 800, "fit"),
+    alt: "Flip Zone Gymnastics of SWFL gym",
     location: "bradenton",
-    caption: "Recreational classes at Flip Zone SWFL",
+    caption: "Flip Zone Gymnastics of SWFL",
   },
   {
-    src: "https://images.unsplash.com/photo-1526232578324-55a7f7567a7f?w=800&q=80",
-    alt: "Gymnastics floor exercise",
+    src: wixImage("3c407f_b6a374987554492b85d31094980acac4~mv2.jpeg", 800, 600, "fit"),
+    alt: "Gymnasts practicing at Flip Zone SWFL",
     location: "bradenton",
-    caption: "Floor skills and tumbling",
+    caption: "Recreational and team training",
   },
   {
-    src: "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=80",
-    alt: "Gymnastics team practice",
+    src: wixImage("3c407f_98fde81a17c7440689a55084d54570eb~mv2.jpeg", 800, 600, "fit"),
+    alt: "Competitive gymnastics at Flip Zone SWFL",
     location: "bradenton",
     caption: "Competitive women's team",
+  },
+  {
+    src: wixImage("4f2eb8b29e8c44ef90777c751852aeed.jpg", 800, 600, "fit"),
+    alt: "Coaches and gymnasts at Flip Zone SWFL",
+    location: "bradenton",
+    caption: "World-class coaching in Bradenton",
   },
 ];
 

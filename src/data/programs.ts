@@ -23,10 +23,10 @@ export const programs: Program[] = [
     slug: "preschool-gymnastics",
     name: "Preschool Gymnastics",
     shortDescription:
-      "Fun, structured movement classes that build coordination, confidence, and independence for little athletes.",
+      "Preschool gymnastics for ages 5 and under in our recreational training center.",
     description:
-      "Our preschool gymnastics program introduces young children to gymnastics in a safe, playful environment. Athletes develop balance, coordination, climbing, jumping, and rolling skills while building confidence and social skills.",
-    ageRange: "Ages 3–5",
+      "Our preschool gymnastics program introduces young children to gymnastics in a safe, playful environment located in our Recreational Training Center. Athletes develop balance, coordination, climbing, jumping, and rolling skills while building confidence and social skills.",
+    ageRange: "Ages 5 and under",
     skillLevel: "Beginner",
     bestFor: "First-time gymnasts & preschool enrichment",
     locations: ["plainfield", "bradenton"],
@@ -54,9 +54,9 @@ export const programs: Program[] = [
     slug: "recreational-gymnastics",
     name: "Recreational Gymnastics",
     shortDescription:
-      "Progressive gymnastics classes for school-age kids — from first cartwheels to advanced skills on all events.",
+      "A supportive gymnastics community for school-age athletes — from first cartwheels to advanced skills.",
     description:
-      "Recreational gymnastics at Flip Zone offers a progressive curriculum on vault, bars, beam, and floor. Athletes build strength, flexibility, and technique at their own pace in a positive, encouraging environment.",
+      "Recreational gymnastics at Flip Zone offers a progressive curriculum on vault, bars, beam, and floor. At our Plainfield location, class options include Parent and Tot, Threes & Fours, Four and Fives, and KinderStars. Athletes build strength, flexibility, and technique at their own pace in a positive, encouraging environment.",
     ageRange: "Ages 5+",
     skillLevel: "Beginner to Intermediate",
     bestFor: "School-age kids learning gymnastics fundamentals",
@@ -87,7 +87,7 @@ export const programs: Program[] = [
     shortDescription:
       "Dedicated tumbling classes focused on floor skills — cartwheels, handsprings, and beyond.",
     description:
-      "Our tumbling program focuses exclusively on floor skills and aerial awareness. Perfect for gymnasts, cheerleaders, and dancers who want to develop powerful tumbling passes and acrobatic skills.",
+      "Our tumbling program focuses on floor skills and aerial awareness, including Level 3–5 Advanced Tumbling. Perfect for gymnasts, cheerleaders, and dancers who want to develop powerful tumbling passes and acrobatic skills.",
     ageRange: "Ages 5+",
     skillLevel: "Beginner to Advanced",
     bestFor: "Cheer prep & tumbling-focused athletes",
@@ -116,9 +116,9 @@ export const programs: Program[] = [
     slug: "ninjanastics",
     name: "NinjaNastics",
     shortDescription:
-      "High-energy obstacle course training combining gymnastics, ninja skills, and athletic conditioning.",
+      "A combination of ninja and gymnastics skills in high-energy classes.",
     description:
-      "NinjaNastics combines gymnastics fundamentals with ninja-style obstacle training. Kids build strength, agility, and confidence while conquering courses, climbing walls, and mastering ninja moves.",
+      "NinjaNastics combines gymnastics fundamentals with ninja-style obstacle training — a combination of ninja and gymnastics skills. Kids build strength, agility, and confidence while conquering courses, climbing walls, and mastering ninja moves in our recreational training center.",
     ageRange: "Ages 5+",
     skillLevel: "All Levels",
     bestFor: "Active kids who love obstacles & challenges",
@@ -149,7 +149,7 @@ export const programs: Program[] = [
     shortDescription:
       "Competitive gymnastics pathways for dedicated athletes — from developmental levels through USAG and Xcel.",
     description:
-      "Our competitive team program develops dedicated gymnasts through structured training, skill progression, and competition preparation. Indiana offers comprehensive team programming; Florida features women's USAG Levels 1–10 and Xcel.",
+      "Our competitive team program develops dedicated gymnasts through structured training and competition preparation. Indiana offers comprehensive team programming; Florida features competitive women's teams at USAG Levels 1–10 and Xcel, now with 95+ competitive athletes.",
     ageRange: "By invitation / evaluation",
     skillLevel: "Intermediate to Elite",
     bestFor: "Dedicated athletes pursuing competition",
@@ -180,7 +180,7 @@ export const programs: Program[] = [
     shortDescription:
       "Academic preschool combined with gymnastics — a unique whole-child learning experience.",
     description:
-      "Shooting Stars Gym N Learn (SSGNL) combines a quality academic preschool curriculum with daily gymnastics instruction. Children develop academically, socially, and physically in our dedicated preschool facility.",
+      "Shooting Stars Gym N Learn (SSGNL) combines a strong academic curriculum with daily gymnastics and fitness in our state-of-the-art facility. Classes run 9:30 to 1:30 and include 30–45 minutes of gymnastics daily. We develop the whole child — academic, social, emotional, and physical — and have fun doing it. We use a modified Abeka curriculum and offer field trips, parent-teacher conferences, and report cards.",
     ageRange: "Preschool ages",
     skillLevel: "Preschool",
     bestFor: "Families seeking preschool + gymnastics",
@@ -209,9 +209,9 @@ export const programs: Program[] = [
     slug: "gymstars",
     name: "GymStars / Special Needs",
     shortDescription:
-      "Adaptive gymnastics classes designed for athletes with special needs in a supportive environment.",
+      "Special needs gymnastics classes in a supportive, adaptive environment.",
     description:
-      "GymStars provides adaptive gymnastics programming for athletes with special needs. Our trained coaches create individualized experiences that build confidence, motor skills, and joy through movement.",
+      "GymStars provides special needs gymnastics classes in a supportive environment. Our trained coaches create individualized experiences that build confidence, motor skills, and joy through movement.",
     ageRange: "All ages",
     skillLevel: "Adaptive",
     bestFor: "Athletes with special needs",

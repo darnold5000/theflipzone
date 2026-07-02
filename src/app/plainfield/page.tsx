@@ -8,6 +8,7 @@ import { getLocation } from "@/data/locations";
 import { getProgramsForLocation } from "@/data/programs";
 import { getGalleryForLocation } from "@/data/gallery";
 import { iclassproLinks } from "@/data/iclassproLinks";
+import { brand } from "@/data/brand";
 import { CheckCircle } from "lucide-react";
 
 const location = getLocation("plainfield");
@@ -27,7 +28,7 @@ export default function PlainfieldPage() {
       <Hero
         headline="The Flip Zone — Plainfield, Indiana"
         subheadline="Preschool through competitive gymnastics, tumbling, NinjaNastics, and more in our state-of-the-art two-building complex."
-        image="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&q=80"
+        image={brand.indianaHero}
         showCTAs={false}
       />
 

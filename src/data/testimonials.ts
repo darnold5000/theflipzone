@@ -7,26 +7,26 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Flip Zone has helped our daughter gain confidence, strength, and friendships. The coaches truly care about every athlete.",
-    author: "Flip Zone Parent",
+      "At The Flip Zone you will find much more than just an extensive gymnastics training facility. Our Gymnastics Club is a supportive community that pushes athletes to reach better results in a healthy and safe environment.",
+    author: "The Flip Zone",
     location: "Plainfield, Indiana",
   },
   {
     quote:
-      "We love the positive environment and how much our son has grown — both as a gymnast and as a person.",
-    author: "Flip Zone Parent",
+      "Stephanie brings over 40 years of gymnastics experience. She has a passion for helping children achieve their potential and makes sure they have fun along the way.",
+    author: "Flip Zone Gymnastics of SWFL",
     location: "Bradenton, Florida",
   },
   {
     quote:
-      "The preschool program gave our daughter a wonderful foundation. She's confident, coordinated, and always excited for class.",
-    author: "SSGNL Parent",
+      "We develop the whole child — academic, social, emotional, and physical — and have FUN! SSGNL offers the best of both worlds: a strong academic curriculum and an entire gymnastics gym.",
+    author: "SSGNL Preschool",
     location: "Plainfield, Indiana",
   },
   {
     quote:
-      "From recreational classes to competitive team, Flip Zone has been an incredible part of our family's journey.",
-    author: "Team Parent",
+      "World class gymnastics coaches in your own backyard. Our homeschool program perfectly balances academics and gymnastics for families who are serious about training.",
+    author: "Flip Zone Parent",
     location: "Bradenton, Florida",
   },
 ];

@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import { locations } from "@/data/locations";
 import { iclassproLinks } from "@/data/iclassproLinks";
 import { programs } from "@/data/programs";
+import { brand } from "@/data/brand";
 
 export function SiteFooter() {
   return (
@@ -11,9 +13,13 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 font-bold text-sm">
-                FZ
-              </div>
+              <Image
+                src={brand.logo}
+                alt={brand.logoAlt}
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-lg object-contain bg-white/10"
+              />
               <span className="font-bold text-lg">The Flip Zone</span>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
@@ -33,6 +39,9 @@ export function SiteFooter() {
                   >
                     {loc.name}
                   </Link>
+                  {loc.address && (
+                    <p className="text-white/60 text-xs mt-1">{loc.address}</p>
+                  )}
                   {loc.phones.map((phone) => (
                     <a
                       key={phone.number}

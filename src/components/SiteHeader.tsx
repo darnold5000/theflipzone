@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { iclassproLinks } from "@/data/iclassproLinks";
+import { brand } from "@/data/brand";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -26,9 +28,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-            FZ
-          </div>
+          <Image
+            src={brand.logo}
+            alt={brand.logoAlt}
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-lg object-contain"
+          />
           <span className="font-bold text-lg text-foreground hidden sm:block">
             The Flip Zone
           </span>
