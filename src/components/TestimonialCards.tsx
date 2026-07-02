@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import type { Testimonial } from "@/data/testimonials";
 
@@ -15,23 +14,20 @@ export function TestimonialCards({ testimonials }: TestimonialCardsProps) {
       {testimonials.map((t, i) => (
         <motion.div
           key={i}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
+          transition={{ duration: 0.4, delay: i * 0.08 }}
+          className="relative p-6 sm:p-8 rounded-2xl bg-white border border-purple-100 shadow-md"
         >
-          <Card className="h-full border-0 shadow-md">
-            <CardContent className="p-6 sm:p-8">
-              <Quote className="h-8 w-8 text-[oklch(0.65_0.15_200)] mb-4 opacity-60" />
-              <p className="text-foreground leading-relaxed mb-4">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div>
-                <p className="font-semibold text-sm">{t.author}</p>
-                <p className="text-xs text-muted-foreground">{t.location}</p>
-              </div>
-            </CardContent>
-          </Card>
+          <Quote className="h-8 w-8 text-flip-purple/40 mb-4" />
+          <p className="text-foreground leading-relaxed text-base normal-case italic">
+            &ldquo;{t.quote}&rdquo;
+          </p>
+          <div className="mt-5 pt-4 border-t border-purple-50 normal-case">
+            <p className="font-bold text-sm">{t.author}</p>
+            <p className="text-xs text-flip-teal font-medium">{t.location}</p>
+          </div>
         </motion.div>
       ))}
     </div>

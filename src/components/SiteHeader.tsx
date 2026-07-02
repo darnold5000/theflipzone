@@ -55,7 +55,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <div className="relative hidden sm:block">
             <Button
-              className="rounded-full gap-1"
+              className="rounded-full gap-1 bg-gradient-flip hover:opacity-95 text-white font-bold"
               onClick={() => setEnrollOpen(!enrollOpen)}
             >
               Enroll Now

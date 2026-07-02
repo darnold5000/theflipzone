@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { EnrollButton } from "@/components/ui-primitives";
+import { getProgramAssets } from "@/data/programAssets";
 import type { Program } from "@/data/programs";
 import { iclassproLinks } from "@/data/iclassproLinks";
 import type { LocationId } from "@/data/locations";
@@ -10,56 +10,88 @@ import type { LocationId } from "@/data/locations";
 interface ProgramCardProps {
   program: Program;
   locationId?: LocationId;
+  variant?: "default" | "elite";
 }
 
-export function ProgramCard({ program, locationId }: ProgramCardProps) {
+export function ProgramCard({
+  program,
+  locationId,
+  variant = "default",
+}: ProgramCardProps) {
+  const assets = getProgramAssets(program.slug);
   const enrollLocation =
     locationId && program.locations.includes(locationId)
       ? locationId
       : program.locations[0];
 
+  const highlights =
+    assets?.parentHighlights ?? program.whatTheyLearn.slice(0, 4);
+
   return (
-    <Card className="h-full overflow-hidden border-0 shadow-md hover:shadow-lg transition-all duration-300 group">
-      <div className={`h-1.5 bg-gradient-to-r ${program.color}`} />
-      <CardContent className="p-6 flex flex-col h-full">
-        <div className="flex items-start justify-between mb-3">
-          <span className="text-3xl">{program.icon}</span>
-          <Badge variant="secondary" className="text-xs">
-            {program.ageRange}
-          </Badge>
+    <Card
+      className={`h-full overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 group ${
+        variant === "elite" ? "ring-2 ring-amber-400/50" : ""
+      }`}
+    >
+      {/* Large program image */}
+      <div className="relative h-48 sm:h-52 overflow-hidden">
+        {assets?.image ? (
+          <Image
+            src={assets.image}
+            alt={program.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          <div className={`h-full bg-gradient-to-br ${program.color}`} />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        <div className="absolute bottom-3 left-3 right-3">
+          <p className="text-white/90 text-xs font-semibold normal-case">
+            👧 {program.ageRange}
+          </p>
         </div>
-        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+      </div>
+
+      <CardContent className="p-5 sm:p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold mb-1 group-hover:text-flip-blue transition-colors">
           {program.name}
         </h3>
-        <p className="text-sm text-muted-foreground mb-4 flex-grow">
-          {program.shortDescription}
+        <p className="text-sm text-flip-purple font-semibold mb-3 normal-case">
+          Perfect for: {program.bestFor}
         </p>
-        <div className="space-y-1 mb-4 text-xs text-muted-foreground">
-          <p>
-            <span className="font-medium text-foreground">Level:</span>{" "}
-            {program.skillLevel}
-          </p>
-          <p>
-            <span className="font-medium text-foreground">Best for:</span>{" "}
-            {program.bestFor}
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-2 mt-auto">
+
+        <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-2">
+          What they&apos;ll learn
+        </p>
+        <ul className="space-y-1.5 mb-5 flex-grow">
+          {highlights.map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-2 text-sm text-foreground normal-case"
+            >
+              <Check className="h-4 w-4 text-flip-teal shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-col gap-2 mt-auto">
+          <a
+            href={iclassproLinks[enrollLocation].classes}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center font-bold rounded-full px-6 py-2.5 text-sm bg-gradient-flip text-white hover:opacity-95 transition-opacity w-full"
+          >
+            View Classes
+          </a>
           <Link
             href={`/programs/${program.slug}`}
-            className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+            className="text-center text-sm font-semibold text-flip-blue hover:underline normal-case"
           >
-            Learn More
-            <ArrowRight className="h-3.5 w-3.5" />
+            Learn more about {program.name.split(" ")[0]}
           </Link>
-          <EnrollButton
-            href={iclassproLinks[enrollLocation].classes}
-            variant="accent"
-            size="sm"
-            className="ml-auto"
-          >
-            Enroll
-          </EnrollButton>
         </div>
       </CardContent>
     </Card>

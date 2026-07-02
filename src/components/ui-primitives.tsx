@@ -6,6 +6,7 @@ interface SectionHeadingProps {
   subtitle?: string;
   centered?: boolean;
   className?: string;
+  light?: boolean;
 }
 
 export function SectionHeading({
@@ -13,14 +14,26 @@ export function SectionHeading({
   subtitle,
   centered = true,
   className,
+  light = false,
 }: SectionHeadingProps) {
   return (
     <div className={cn(centered && "text-center", "mb-10", className)}>
-      <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+      <h2
+        className={cn(
+          "text-3xl font-bold tracking-tight sm:text-4xl uppercase",
+          light ? "text-white" : "text-foreground"
+        )}
+      >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p
+          className={cn(
+            "mt-3 text-lg max-w-2xl mx-auto normal-case leading-relaxed",
+            light ? "text-white/80" : "text-muted-foreground",
+            centered && "mx-auto"
+          )}
+        >
           {subtitle}
         </p>
       )}
@@ -32,7 +45,7 @@ interface SectionProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  variant?: "default" | "muted" | "navy";
+  variant?: "default" | "muted" | "navy" | "gradient";
 }
 
 export function Section({
@@ -46,8 +59,9 @@ export function Section({
       id={id}
       className={cn(
         "py-16 sm:py-20 px-4 sm:px-6 lg:px-8",
-        variant === "muted" && "bg-muted/50",
-        variant === "navy" && "bg-[oklch(0.25_0.08_260)] text-white",
+        variant === "muted" && "bg-gradient-flip-soft",
+        variant === "navy" && "bg-gradient-flip text-white",
+        variant === "gradient" && "bg-gradient-to-br from-blue-600 via-purple-600 to-teal-500 text-white",
         className
       )}
     >
@@ -65,23 +79,23 @@ export function EnrollButton({
 }: {
   href: string;
   children: React.ReactNode;
-  variant?: "default" | "outline" | "accent";
+  variant?: "default" | "outline" | "accent" | "white";
   size?: "default" | "sm" | "lg";
   className?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200";
+    "inline-flex items-center justify-center font-bold rounded-full transition-all duration-200";
   const sizes = {
     sm: "px-4 py-2 text-sm",
     default: "px-6 py-2.5 text-sm",
     lg: "px-8 py-3.5 text-base",
   };
   const variants = {
-    default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
+    default: "bg-gradient-flip text-white hover:opacity-95 shadow-md shadow-blue-500/20",
     outline:
-      "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
-    accent:
-      "bg-[oklch(0.65_0.15_200)] text-white hover:bg-[oklch(0.55_0.15_200)] shadow-md hover:shadow-lg",
+      "border-2 border-flip-blue text-flip-blue hover:bg-flip-blue hover:text-white",
+    accent: "bg-flip-teal text-white hover:opacity-90 shadow-md",
+    white: "bg-white text-flip-blue hover:bg-white/90 shadow-lg",
   };
 
   return (
@@ -109,7 +123,7 @@ export function InternalLink({
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center justify-center font-semibold rounded-full px-6 py-2.5 text-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200",
+        "inline-flex items-center justify-center font-bold rounded-full px-6 py-2.5 text-sm border-2 border-flip-blue text-flip-blue hover:bg-flip-blue hover:text-white transition-all duration-200",
         className
       )}
     >

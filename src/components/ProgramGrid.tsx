@@ -5,9 +5,14 @@ import type { LocationId } from "@/data/locations";
 interface ProgramGridProps {
   programs: Program[];
   locationId?: LocationId;
+  variant?: "default" | "elite";
 }
 
-export function ProgramGrid({ programs, locationId }: ProgramGridProps) {
+export function ProgramGrid({
+  programs,
+  locationId,
+  variant = "default",
+}: ProgramGridProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {programs.map((program) => (
@@ -15,6 +20,7 @@ export function ProgramGrid({ programs, locationId }: ProgramGridProps) {
           key={program.slug}
           program={program}
           locationId={locationId}
+          variant={variant}
         />
       ))}
     </div>

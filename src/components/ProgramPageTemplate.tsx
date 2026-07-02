@@ -11,6 +11,8 @@ import { programs } from "@/data/programs";
 import { programFaqs } from "@/data/faqs";
 import { iclassproLinks } from "@/data/iclassproLinks";
 import type { LocationId } from "@/data/locations";
+import { brand } from "@/data/brand";
+import { getProgramAssets } from "@/data/programAssets";
 
 interface ProgramPageTemplateProps {
   program: Program;
@@ -35,14 +37,21 @@ export function ProgramPageTemplate({
     .slice(0, 3);
 
   const faqs = programFaqs[program.slug] ?? [];
+  const assets = getProgramAssets(program.slug);
+  const heroImage =
+    program.slug === "preschool-gymnastics" || program.slug === "ssgnl-preschool"
+      ? brand.preschoolHero
+      : assets?.image ?? brand.homepageHero;
 
   return (
     <>
       <Hero
         headline={program.name}
         subheadline={program.shortDescription}
+        image={heroImage}
         compact
         showCTAs={false}
+        useCollage={false}
       />
 
       <Section>
@@ -58,8 +67,8 @@ export function ProgramPageTemplate({
             {program.description}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <EnrollButton href={iclassproLinks[enrollLocation].classes} variant="accent">
-              Enroll Now
+            <EnrollButton href={iclassproLinks[enrollLocation].classes}>
+              View Classes
             </EnrollButton>
             <EnrollButton href={iclassproLinks[enrollLocation].portal} variant="outline">
               Parent Portal
@@ -115,19 +124,20 @@ export function ProgramPageTemplate({
         </div>
       </Section>
 
-      <Section variant="navy">
+      <Section variant="gradient">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-white/70 mb-8">
-            Enroll in {program.name} through our secure iClassPro parent portal.
+          <h2 className="text-3xl font-bold mb-4 uppercase">Find a Class for Your Child</h2>
+          <p className="text-white/85 mb-8 normal-case">
+            Browse available {program.name} classes and enroll through our secure
+            parent portal.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <EnrollButton href={iclassproLinks[enrollLocation].classes} variant="accent">
+            <EnrollButton href={iclassproLinks[enrollLocation].classes} variant="white">
               View Classes & Enroll
             </EnrollButton>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 font-semibold rounded-full px-6 py-2.5 text-sm border-2 border-white/40 text-white hover:bg-white hover:text-primary transition-all"
+              className="inline-flex items-center gap-2 font-bold rounded-full px-6 py-2.5 text-sm border-2 border-white/50 text-white hover:bg-white hover:text-flip-blue transition-all normal-case"
             >
               Contact Us
               <ArrowRight className="h-4 w-4" />

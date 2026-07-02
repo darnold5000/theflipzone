@@ -26,9 +26,9 @@ export const programs: Program[] = [
       "Preschool gymnastics for ages 5 and under in our recreational training center.",
     description:
       "Our preschool gymnastics program introduces young children to gymnastics in a safe, playful environment located in our Recreational Training Center. Athletes develop balance, coordination, climbing, jumping, and rolling skills while building confidence and social skills.",
-    ageRange: "Ages 5 and under",
+    ageRange: "Ages 18 months – 5 years",
     skillLevel: "Beginner",
-    bestFor: "First-time gymnasts & preschool enrichment",
+    bestFor: "Little ones building confidence & coordination",
     locations: ["plainfield", "bradenton"],
     benefits: [
       "Builds coordination and body awareness",
