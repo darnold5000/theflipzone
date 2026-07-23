@@ -29,6 +29,7 @@ export const metadata: Metadata = {
       "From first cartwheels to competitive team — a place your child will love.",
     type: "website",
   },
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
